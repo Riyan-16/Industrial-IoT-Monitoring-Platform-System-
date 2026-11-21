@@ -1,103 +1,264 @@
-Industrial IoT Monitoring Platform
-A browser-based educational project that demonstrates how Operating System concepts can be applied to an industrial monitoring environment. The application simulates industrial sensor readings, generates alerts for critical conditions, manages monitoring processes, and compares CPU scheduling algorithms.
-Note: This is a simulation built with HTML, CSS, and JavaScript. It does not connect to physical industrial sensors or control real machinery.
-Features
-1. Live Sensor Monitoring
-The dashboard simulates four industrial parameters:
-Temperature (°C)
-Pressure (bar)
-Vibration (mm/s)
-Machine Load (%)
-Sensor readings are refreshed automatically every three seconds.
-2. Threshold-Based Alerts
-The application checks sensor readings against predefined thresholds and displays alerts when critical values are detected.
-Parameter        Warning threshold   Critical threshold
-Temperature             Above 80°C           Above 90°C Pressure               Above 7 bar          Above 8 bar Vibration             Above 6 mm/s         Above 8 mm/s Machine Load             Above 80%            Above 90%
-3. Process Management
-The project represents industrial monitoring activities as processes. Five predefined processes are used:
-Process ID   Process name            Priority   Burst time   Arrival time
-P1           Temperature Monitor            3            5              0 P2           Pressure Monitor               2            3              1 P3           Vibration Monitor              1            4              2 P4           Alert Processing               1            2              3 P5           Dashboard Update               4            6              4
-4. CPU Scheduling Algorithms
-Users can select and run four scheduling algorithms:
-First Come First Serve (FCFS): Executes processes in arrival order.
-Shortest Job First (SJF): Selects the available process with the shortest burst time.
-Priority Scheduling: Selects the available process with the highest priority. A smaller priority number represents a higher priority.
-Round Robin (RR): Allocates CPU time in fixed time slices. The configured time quantum is 2 time units.
-5. Scheduling Performance Analysis
-After scheduling, the application displays performance measures such as:
-Average waiting time
-Average turnaround time
-Average response time
-CPU utilization
-A Gantt chart visualizes the process execution sequence.
-6. Dashboard and System Information
-The interface brings sensor readings, system statistics, process information, scheduling controls, results, and industrial alerts together in one dashboard.
-Technologies Used
-HTML --- page structure
-CSS --- layout and styling
-JavaScript --- sensor simulation, alert logic, process management, scheduling algorithms, and dashboard updates
-No backend server, database, or external JavaScript framework is required for the current version.
-Project Structure
+
+# 🏭 Industrial IoT Monitoring Platform
+
+<p align="center">
+  <b>A Smart Industrial Monitoring Simulation Using Operating System Concepts</b>
+  <br>
+  Monitor • Manage • Schedule • Analyse
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-Frontend-orange?logo=html5" />
+  <img src="https://img.shields.io/badge/CSS3-Styling-blue?logo=css3" />
+  <img src="https://img.shields.io/badge/JavaScript-Logic-yellow?logo=javascript" />
+  <img src="https://img.shields.io/badge/Project-Academic-success" />
+</p>
+
+---
+
+## 📌 About the Project
+
+The **Industrial IoT Monitoring Platform** is a browser-based project developed to demonstrate the practical application of Operating System concepts in an industrial monitoring environment.
+
+The platform simulates different industrial parameters, including temperature, pressure, vibration, and machine load. It continuously updates sensor readings, identifies abnormal conditions, and generates alerts whenever predefined safety thresholds are crossed.
+
+Along with sensor monitoring, the project implements different CPU scheduling algorithms to demonstrate how industrial monitoring activities can be managed as individual processes.
+
+The main objective is to connect theoretical Operating System concepts with a practical and interactive industrial monitoring simulation.
+
+> ⚠️ **Note:** This project uses simulated sensor readings and is intended for educational purposes. It does not connect to physical industrial sensors or control real machinery.
+
+---
+
+## ✨ Key Features
+
+### 🌡️ 1. Live Sensor Monitoring
+The platform simulates four important industrial parameters:
+
+- Temperature (°C)
+- Pressure (bar)
+- Vibration (mm/s)
+- Machine Load (%)
+
+Sensor readings are automatically refreshed every **3 seconds**.
+
+### 🚨 2. Industrial Alert System
+
+The application checks sensor readings against predefined thresholds and generates alerts when critical conditions are detected.
+
+| Parameter | Warning Threshold | Critical Threshold |
+|:---|:---:|:---:|
+| Temperature | Above 80°C | Above 90°C |
+| Pressure | Above 7 bar | Above 8 bar |
+| Vibration | Above 6 mm/s | Above 8 mm/s |
+| Machine Load | Above 80% | Above 90% |
+
+### ⚙️ 3. Process Management
+
+The project represents industrial monitoring activities as individual processes.
+
+Five predefined processes are included:
+
+| PID | Process Name | Priority | Burst Time | Arrival Time |
+|:---:|:---|:---:|:---:|:---:|
+| P1 | Temperature Monitor | 3 | 5 | 0 |
+| P2 | Pressure Monitor | 2 | 3 | 1 |
+| P3 | Vibration Monitor | 1 | 4 | 2 |
+| P4 | Alert Processing | 1 | 2 | 3 |
+| P5 | Dashboard Update | 4 | 6 | 4 |
+
+### 🖥️ 4. CPU Scheduling Algorithms
+
+The platform implements four major CPU scheduling algorithms:
+
+| Algorithm | Description |
+|:---|:---|
+| **FCFS** | Executes processes in their order of arrival. |
+| **SJF** | Selects the available process with the shortest burst time. |
+| **Priority Scheduling** | Executes the available process with the highest priority. |
+| **Round Robin** | Allocates CPU time to processes using a fixed time quantum. |
+
+**Round Robin Time Quantum:** 2 time units.
+
+*Note: In Priority Scheduling, a smaller priority number represents a higher priority.*
+
+### 📊 5. Scheduling Performance Analysis
+
+The application calculates and displays important CPU scheduling metrics:
+
+- Average Waiting Time
+- Average Turnaround Time
+- Average Response Time
+- CPU Utilization
+
+A **Gantt Chart** is also generated to visualize the process execution sequence.
+
+### 📈 6. Interactive Dashboard
+
+The dashboard brings together:
+
+- Live sensor readings
+- Industrial alerts
+- System statistics
+- Process management
+- CPU scheduling controls
+- Scheduling performance results
+- Gantt chart visualization
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|:---|:---|
+| HTML5 | Structure of the web application |
+| CSS3 | Styling and dashboard layout |
+| JavaScript | Application logic and functionality |
+
+The project uses vanilla HTML, CSS, and JavaScript without requiring any external frontend framework.
+
+---
+
+## 📂 Project Structure
+
+```text
 Industrial-IoT-Monitoring-Platform/
 │
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-Getting Started
-Prerequisites
-A modern web browser such as Google Chrome, Microsoft Edge, or Firefox.
-No additional installation or package manager is required.
-Run Locally
-Download or clone this repository.
-Open the project folder.
-Open index.html in your web browser.
-Alternatively, use the Live Server extension in Visual Studio Code:
-Open the project folder in VS Code.
-Install the Live Server extension if it is not already installed.
-Right-click index.html.
-Select Open with Live Server.
-How to Use
-Open the application in your browser.
-View the four simulated sensor readings on the dashboard.
-Wait for the readings to refresh and observe any generated alerts.
-Use Generate Processes to display the predefined process list.
-Select a CPU scheduling algorithm.
-Click Run Scheduler to execute the scheduling simulation.
-Review the Gantt chart and calculated performance metrics.
-Use Clear Processes to reset the process and scheduling information.
-Operating System Concepts Demonstrated
-Process creation and process attributes
-CPU scheduling and resource allocation
-FCFS, SJF, Priority, and Round Robin scheduling
-Waiting time, turnaround time, and response time
-CPU utilization
-Gantt chart-based scheduling visualization
-Periodic task execution and event-based alert generation
-Project Scope and Limitations
-Sensor readings are randomly simulated; they are not collected from physical devices.
-The scheduler demonstrates process execution in JavaScript; it does not change the actual operating system's CPU scheduler.
-The application is intended for learning and demonstration, not for industrial safety decisions or real-time machine control.
-The current version does not include persistent database storage or user authentication.
-Future Enhancements
-Possible extensions include:
-Connecting real sensors through an ESP32 or Arduino.
-Storing sensor history and alerts in a database.
-Adding live charts for sensor readings.
-Implementing additional scheduling algorithms.
-Adding alert notifications and downloadable reports.
-Introducing remote monitoring and predictive maintenance features.
-Learning Outcomes
-This project provides practical exposure to:
-Applying Operating System concepts to an industrial monitoring scenario.
-Implementing and comparing CPU scheduling algorithms.
-Calculating scheduling performance metrics.
-Building a dynamic dashboard using HTML, CSS, and JavaScript.
-Simulating sensor data and generating threshold-based alerts.
-Organizing a project into separate frontend files.
-Contributors
-Riyan Bindal
-Shashwat Mishra
-Aryan Asthana 
-License
-This project was created for educational and academic purposes. If you intend to publish or reuse it beyond that context, add a license that reflects the permissions you want to grant.
+├── index.html       # Main application structure
+├── style.css        # Styling and dashboard design
+├── script.js        # Application logic and algorithms
+│
+└── README.md        # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+Follow these simple steps to run the project locally.
+
+### Prerequisites
+
+- A modern web browser (Google Chrome, Firefox, or Microsoft Edge).
+- Visual Studio Code (optional).
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/your-username/your-repository-name.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd Industrial-IoT-Monitoring-Platform
+```
+
+**3. Run the application**
+
+Open the `index.html` file in your preferred web browser.
+
+Alternatively, use the **Live Server** extension in Visual Studio Code.
+
+---
+
+## 🎮 How to Use
+
+1. Open the application in your browser.
+2. Observe the four simulated sensor readings on the dashboard.
+3. Wait for automatic sensor updates and observe the generated alerts.
+4. Click **Generate Processes** to display the predefined processes.
+5. Select your preferred CPU scheduling algorithm.
+6. Click **Run Scheduler** to execute the scheduling simulation.
+7. Analyse the Gantt chart and calculated performance metrics.
+8. Click **Clear Processes** to reset the process and scheduling information.
+
+---
+
+## 📚 Operating System Concepts Demonstrated
+
+This project demonstrates several important Operating System concepts:
+
+- Process Creation and Management
+- CPU Scheduling
+- First Come First Serve (FCFS)
+- Shortest Job First (SJF)
+- Priority Scheduling
+- Round Robin Scheduling
+- Waiting Time and Turnaround Time
+- Response Time and CPU Utilization
+- Gantt Chart-Based Process Visualization
+- Periodic Task Execution
+- Event-Based Alert Generation
+
+---
+
+## 🎯 Project Objectives
+
+- To demonstrate the practical application of Operating System concepts.
+- To understand process management in an industrial monitoring scenario.
+- To implement and compare different CPU scheduling algorithms.
+- To analyse scheduling performance using standard metrics.
+- To simulate industrial sensor monitoring and threshold-based alerts.
+- To develop an interactive dashboard using web technologies.
+
+---
+
+## 🔮 Future Enhancements
+
+The project can be extended with several additional features:
+
+- 🔌 Integration with real sensors using ESP32 or Arduino.
+- 📉 Live graphical representation of sensor readings.
+- 🗄️ Database integration for storing historical data.
+- 🧠 Machine learning-based predictive maintenance.
+- 🔔 Advanced alert notifications and sound warnings.
+- 🌐 Remote industrial monitoring.
+- 📄 Exporting sensor and scheduling reports in PDF or CSV format.
+- ⚙️ Implementation of additional CPU scheduling algorithms.
+
+---
+
+## 🎓 Learning Outcomes
+
+Through this project, we gained practical experience in:
+
+- Understanding and implementing CPU scheduling algorithms.
+- Managing processes using different scheduling policies.
+- Calculating and comparing scheduling performance metrics.
+- Developing dynamic web applications using HTML, CSS, and JavaScript.
+- Simulating sensor readings and generating automated alerts.
+- Integrating multiple modules into a single application.
+- Applying theoretical Operating System concepts to a practical scenario.
+
+---
+
+## 👥 Project Contributors
+
+| S. No. | Name |
+|:---:|:---|
+| 1 | Aryan Asthana |
+| 2 | Riyan Bindal |
+| 3 | Shashwat Mishra |
+
+---
+
+## 📖 References
+
+- Abraham Silberschatz, Peter B. Galvin and Greg Gagne — *Operating System Concepts*.
+- William Stallings — *Operating Systems: Internals and Design Principles*.
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [GeeksforGeeks – Operating Systems](https://www.geeksforgeeks.org/operating-systems/)
+- [W3Schools – JavaScript](https://www.w3schools.com/js/)
+
+---
+
+<p align="center">
+  <b>🚀 Industrial IoT Monitoring Platform</b>
+  <br>
+  <i>Bridging Operating System Concepts with Industrial Monitoring</i>
+  <br><br>
+  Made with ❤️ by Team 61
+</p>
