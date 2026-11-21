@@ -239,9 +239,9 @@ Through this project, we gained practical experience in:
 
 | S. No. | Name |
 |:---:|:---|
-| 1 | Aryan Asthana |
-| 2 | Riyan Bindal |
-| 3 | Shashwat Mishra |
+| 1 | Riyan Bindal |
+| 2 | Shashwat Mishra |
+| 3 | Aryan Asthana |
 
 ---
 
