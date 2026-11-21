@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industrial IoT Monitoring Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div>
+        <h1>Industrial IoT Monitoring Platform</h1>
+        <p>Operating System Based Industrial Process Monitoring</p>
+    </div>
+
+    <div class="system-status">
+        <span id="statusDot"></span>
+        <span id="systemStatus">SYSTEM ONLINE</span>
+    </div>
+</header>
+
+
+<main class="container">
+
+    <!-- ================= SENSOR MONITORING ================= -->
+
+    <section>
+        <h2>Live Sensor Monitoring</h2>
+
+        <div class="sensor-grid">
+
+            <div class="sensor-card">
+                <h3>Temperature</h3>
+                <div class="sensor-value">
+                    <span id="temperature">--</span> °C
+                </div>
+                <p id="temperatureStatus">Normal</p>
+            </div>
+
+
+            <div class="sensor-card">
+                <h3>Pressure</h3>
+                <div class="sensor-value">
+                    <span id="pressure">--</span> bar
+                </div>
+                <p id="pressureStatus">Normal</p>
+            </div>
+
+
+            <div class="sensor-card">
+                <h3>Vibration</h3>
+                <div class="sensor-value">
+                    <span id="vibration">--</span> mm/s
+                </div>
+                <p id="vibrationStatus">Normal</p>
+            </div>
+
+
+            <div class="sensor-card">
+                <h3>Machine Load</h3>
+                <div class="sensor-value">
+                    <span id="machineLoad">--</span> %
+                </div>
+                <p id="loadStatus">Normal</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= SYSTEM STATISTICS ================= -->
+
+    <section>
+
+        <h2>System Statistics</h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Active Processes</h3>
+                <strong id="activeProcesses">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <h3>Critical Alerts</h3>
+                <strong id="criticalAlerts">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <h3>CPU Utilization</h3>
+                <strong id="cpuUtilization">0%</strong>
+            </div>
+
+            <div class="stat-card">
+                <h3>System Uptime</h3>
+                <strong id="uptime">0 sec</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROCESS MANAGEMENT ================= -->
+
+    <section>
+
+        <h2>Process Management</h2>
+
+        <div class="control-panel">
+
+            <button onclick="generateProcesses()">
+                Generate Processes
+            </button>
+
+            <button onclick="runScheduling()">
+                Run Scheduler
+            </button>
+
+            <button onclick="clearProcesses()">
+                Clear Processes
+            </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>PID</th>
+                        <th>Process</th>
+                        <th>Priority</th>
+                        <th>Burst Time</th>
+                        <th>Arrival Time</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="processTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CPU SCHEDULING ================= -->
+
+    <section>
+
+        <h2>CPU Scheduling</h2>
+
+        <div class="scheduler-controls">
+
+            <label>
+                Scheduling Algorithm
+            </label>
+
+            <select id="algorithm">
+
+                <option value="FCFS">
+                    First Come First Serve (FCFS)
+                </option>
+
+                <option value="SJF">
+                    Shortest Job First (SJF)
+                </option>
+
+                <option value="PRIORITY">
+                    Priority Scheduling
+                </option>
+
+                <option value="RR">
+                    Round Robin
+                </option>
+
+            </select>
+
+
+            <label id="quantumLabel">
+                Time Quantum
+            </label>
+
+            <input
+                type="number"
+                id="quantum"
+                value="2"
+                min="1"
+            >
+
+        </div>
+
+
+        <div class="results-grid">
+
+            <div class="result-card">
+                <h3>Average Waiting Time</h3>
+                <strong id="avgWaiting">0</strong>
+            </div>
+
+            <div class="result-card">
+                <h3>Average Turnaround Time</h3>
+                <strong id="avgTurnaround">0</strong>
+            </div>
+
+            <div class="result-card">
+                <h3>Average Response Time</h3>
+                <strong id="avgResponse">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="gantt-container">
+
+            <h3>CPU Execution Timeline</h3>
+
+            <div id="ganttChart">
+
+                <p class="empty">
+                    Run the scheduler to generate the timeline.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ALERT SYSTEM ================= -->
+
+    <section>
+
+        <h2>Industrial Alerts</h2>
+
+        <div id="alertContainer">
+
+            <p class="empty">
+                No alerts generated.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OS EXPLANATION ================= -->
+
+    <section>
+
+        <h2>Operating System Concepts Used</h2>
+
+        <div class="concept-grid">
+
+            <div>
+                <h3>Process Management</h3>
+                <p>
+                    Industrial monitoring activities are represented
+                    as independent processes/tasks.
+                </p>
+            </div>
+
+            <div>
+                <h3>CPU Scheduling</h3>
+                <p>
+                    Scheduling algorithms determine the order in which
+                    monitoring processes receive CPU time.
+                </p>
+            </div>
+
+            <div>
+                <h3>Priority Scheduling</h3>
+                <p>
+                    Critical industrial conditions receive higher
+                    priority than routine monitoring tasks.
+                </p>
+            </div>
+
+            <div>
+                <h3>Multitasking</h3>
+                <p>
+                    Multiple monitoring activities are managed
+                    concurrently to simulate a real-time environment.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Industrial IoT Monitoring Platform |
+        Operating Systems PBL
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+  </html>
